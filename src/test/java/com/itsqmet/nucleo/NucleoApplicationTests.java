@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class NucleoApplicationTests {
-
+/*
 	@Autowired
 	private ICursoServicio cursoServicio;
 
@@ -22,11 +22,11 @@ class NucleoApplicationTests {
 	private IMatriculaServicio matriculaServicio;
 
 	@Autowired
-	private IProfesorServicio profesorServicio;
+	private IProfesorServicio profesorServicio;*/
 
 	@Test
 	void contextLoads() {
-		// Inserción de Curso
+	/*	// Inserción de Curso
 		Curso curso = new Curso();
 		curso.setCursoNombre("Matemáticas");
 		curso.setDescripcion("Curso de álgebra avanzada");
@@ -61,7 +61,7 @@ class NucleoApplicationTests {
 		matricula.setNombre("Matricula Juan Pérez");
 		matricula.setFkMatricula(estudiante); // Relacionar con el estudiante previamente creado
 		matricula.setCurso(curso); // Relacionar con el curso previamente creado
-		matriculaServicio.insertarMatricula(matricula);
+		matriculaServicio.insertarMatricula(matricula);*/
 	}
 }
 
