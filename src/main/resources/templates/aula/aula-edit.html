@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Aula</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-4">Editar Aula</h1>
+    <form th:action="@{/aula/update}" method="post">
+        <input type="hidden" name="idAula" th:value="${aula.idAula}" />
+        <div class="mb-3">
+            <label for="nombreAula" class="form-label">Nombre del Aula</label>
+            <input type="text" id="nombreAula" name="nombreAula" class="form-control" th:value="${aula.nombreAula}" required>
+        </div>
+        <div class="mb-3">
+            <label for="capacidad" class="form-label">Capacidad</label>
+            <input type="text" id="capacidad" name="capacidad" class="form-control" th:value="${aula.capacidad}" required>
+        </div>
+        <div class="mb-3">
+            <label for="curso" class="form-label">Curso</label>
+            <select id="curso" name="curso.idCurso" class="form-select" required>
+                <option th:each="curso : ${cursos}" th:value="${curso.idCurso}" th:text="${curso.cursoNombre}" th:selected="${curso.idCurso == aula.curso.idCurso}"></option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <a href="/aula" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Profesor</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-4">Editar Profesor</h1>
+    <form th:action="@{/profesor/update/{id}(id=${profesor.idProfesor})}" th:object="${profesor}" method="post">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
+        </div>
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellido" th:field="*{apellidoProfesor}">
+        </div>
+        <div class="mb-3">
+            <label for="correo" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="correo" th:field="*{correo}">
+        </div>
+        <div class="mb-3">
+            <label for="especializacion" class="form-label">Especialización</label>
+            <input type="text" class="form-control" id="especializacion" th:field="*{especializacion}">
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <a href="/profesor/list" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+</body>
+</html>
